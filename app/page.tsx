@@ -201,7 +201,7 @@ export default function HevenessConstructionWebsite() {
                 className="w-full p-4 rounded-xl text-black"
               />
               <textarea
-                rows="5"
+                rows={5}
                 placeholder="Your Message"
                 className="w-full p-4 rounded-xl text-black"
               ></textarea>
