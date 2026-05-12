@@ -6,7 +6,7 @@ export default function HevenessConstructionWebsite() {
       <nav className="bg-[#5c4033] text-white px-8 py-4 flex justify-between items-center shadow-lg sticky top-0 z-50">
         <div className="flex items-center gap-3">
           <img
-            src="/images/logo.jpeg"
+            src="/images/logo.png"
             alt="S HEVENESS CONSTRUCTION Logo"
             className="h-14 w-auto"
           />
