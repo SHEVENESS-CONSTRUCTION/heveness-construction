@@ -5,8 +5,15 @@ export default function HevenessConstructionWebsite() {
       {/* NAVBAR */}
       <nav className="bg-[#5c4033] text-white px-8 py-4 flex justify-between items-center shadow-lg sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          <img src="/images/logo.png" className="h-14 w-auto" />
-          <h1 className="text-xl font-bold">S HEVENESS CONSTRUCTION</h1>
+          <img
+            src="/images/logo.jpeg"
+            alt="S HEVENESS CONSTRUCTION Logo"
+            className="h-14 w-auto"
+          />
+
+          <h1 className="text-xl md:text-2xl font-bold">
+            S HEVENESS CONSTRUCTION
+          </h1>
         </div>
 
         <div className="space-x-6 text-sm md:text-base">
@@ -24,19 +31,20 @@ export default function HevenessConstructionWebsite() {
         className="h-[90vh] flex flex-col justify-center items-center text-center px-6 text-white bg-cover bg-center relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd')",
+            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop')",
         }}
       >
-        <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+        <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
           Building Strong Foundations For The Future
         </h2>
 
-        <p className="max-w-2xl mt-6 text-lg md:text-xl text-[#f3e5d0]">
-          Professional construction solutions delivering quality workmanship and reliability.
+        <p className="max-w-2xl text-lg md:text-xl mb-8 text-[#f3e5d0]">
+          Professional construction solutions delivering quality workmanship,
+          reliability, and excellence on every project.
         </p>
 
         {/* EYECATCHING MESSAGE */}
-        <div className="mt-8 bg-[#f3d9b1] text-[#5c4033] px-6 py-4 rounded-2xl shadow-xl max-w-2xl">
+        <div className="bg-[#f3d9b1] text-[#5c4033] px-6 py-4 rounded-2xl shadow-xl max-w-2xl">
           <p className="font-bold text-lg">
             We can do it all — no project is too small, and no vision is too big.
           </p>
@@ -49,7 +57,7 @@ export default function HevenessConstructionWebsite() {
 
           <div>
             <h3 className="text-4xl font-bold text-[#5c4033] mb-6">
-              About Us
+              About S HEVENESS CONSTRUCTION
             </h3>
 
             <p className="text-lg leading-8 text-gray-700 mb-6">
@@ -88,7 +96,7 @@ export default function HevenessConstructionWebsite() {
         <div className="max-w-6xl mx-auto text-center">
 
           <h3 className="text-4xl font-bold text-[#5c4033] mb-12">
-            Services
+            Our Services
           </h3>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -182,6 +190,7 @@ export default function HevenessConstructionWebsite() {
                     >
                       <img
                         src={img}
+                        alt={project.title}
                         className="h-40 w-full object-cover rounded-xl hover:scale-105 transition duration-300"
                       />
                     </a>
@@ -230,6 +239,7 @@ export default function HevenessConstructionWebsite() {
               </h4>
 
               <p className="mb-4">📞 068 177 8377</p>
+              <p className="mb-4">📞 064 520 9295</p>
               <p className="mb-4">✉️ hevenesss@gmail.com</p>
               <p>📍 Johannesburg, South Africa</p>
             </div>
