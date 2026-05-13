@@ -5,62 +5,100 @@ import { Menu, X } from "lucide-react";
 
 export default function HevenessConstructionWebsite() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState("");
 
-  const projects = [
+  const services = [
     {
-      title: "Foundation & Build Progress",
+      title: "Strong Foundation Work",
       images: ["/images/1.jpeg", "/images/2.jpeg"],
-      desc: "Strong structural foundations and professional building progress from start to finish.",
+      desc:
+        "Strong and durable foundation work forming the base of quality residential construction projects.",
     },
+
     {
       title: "Modern Home Construction",
       images: ["/images/3.jpeg", "/images/4.jpeg"],
-      desc: "Modern residential construction with clean finishes and quality workmanship.",
+      desc:
+        "Modern residential homes built with clean finishes, professional workmanship, and attention to detail.",
     },
+
     {
-      title: "Finishing & Landscaping",
+      title: "Premium Finishing & Landscaping",
       images: ["/images/5.jpeg", "/images/6.jpeg"],
-      desc: "Elegant finishing touches and landscaping designed to enhance the property.",
+      desc:
+        "High-quality tiling, finishing, and landscaping services that enhance the final appearance of properties.",
     },
+  ];
+
+  const projects = [
     {
-      title: "Renovations",
+      title: "Home Construction Progress",
       images: [
-        "/images/7.jpeg",
-        "/images/8.jpeg",
-        "/images/9.jpeg",
-        "/images/10.jpeg",
+        "/images/1.jpeg",
+        "/images/2.jpeg",
+        "/images/2(1).jpeg",
+        "/images/2(2).jpeg",
+        "/images/2(3).jpeg",
       ],
-      desc: "Property renovations and upgrades completed with precision and care.",
+      desc:
+        "Full residential construction project showing foundation work, structural development, and building progress toward completion.",
     },
+
     {
-      title: "Office Construction",
-      images: ["/images/11.jpeg", "/images/12.jpeg"],
-      desc: "Professional office and commercial space construction solutions.",
+      title: "Office Building Renovation",
+      images: [
+        "/images/11(6).jpeg",
+        "/images/11(7).jpeg",
+        "/images/11(5).jpeg",
+        "/images/11.jpeg",
+        "/images/11(3).jpeg",
+        "/images/11(2).jpeg",
+      ],
+      desc:
+        "Office renovation and modernization project completed with professional finishes and upgraded workspace improvements.",
+    },
+
+    {
+      title: "Office Addition Project",
+      images: [
+        "/images/12.jpeg",
+        "/images/12(1).jpeg",
+        "/images/12(2).jpeg",
+        "/images/12(3).jpeg",
+      ],
+      desc:
+        "Commercial extension added onto an existing company building, creating additional professional workspace and functionality.",
     },
   ];
 
   const testimonials = [
     {
       name: "Client - Johannesburg",
-      text: "Excellent workmanship and completed on time. Highly recommended.",
+      text:
+        "Excellent workmanship and completed on time. Highly recommended.",
     },
+
     {
       name: "Home Owner",
-      text: "Professional team with quality finishes and reliable communication.",
+      text:
+        "Professional team with quality finishes and reliable communication.",
     },
+
     {
       name: "Business Client",
-      text: "Affordable construction services with outstanding results.",
+      text:
+        "Affordable construction services with outstanding results.",
     },
   ];
 
   return (
     <div className="font-sans text-gray-800 bg-[#f8f5ef] min-h-screen">
-      
+
       {/* NAVBAR */}
       <nav className="bg-[#5c4033] text-white px-6 md:px-8 py-4 flex justify-between items-center shadow-lg sticky top-0 z-50">
+
         <div className="flex items-center gap-3">
+
           <img
             src="/images/logo.png"
             alt="S HEVENESS CONSTRUCTION Logo"
@@ -70,16 +108,36 @@ export default function HevenessConstructionWebsite() {
           <h1 className="text-lg md:text-2xl font-bold">
             S HEVENESS CONSTRUCTION
           </h1>
+
         </div>
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex space-x-6 text-sm md:text-base">
-          <a href="#home" className="hover:text-[#f3d9b1]">Home</a>
-          <a href="#about" className="hover:text-[#f3d9b1]">About</a>
-          <a href="#services" className="hover:text-[#f3d9b1]">Services</a>
-          <a href="#projects" className="hover:text-[#f3d9b1]">Projects</a>
-          <a href="#testimonials" className="hover:text-[#f3d9b1]">Testimonials</a>
-          <a href="#contact" className="hover:text-[#f3d9b1]">Contact</a>
+
+          <a href="#home" className="hover:text-[#f3d9b1]">
+            Home
+          </a>
+
+          <a href="#about" className="hover:text-[#f3d9b1]">
+            About
+          </a>
+
+          <a href="#services" className="hover:text-[#f3d9b1]">
+            Services
+          </a>
+
+          <a href="#projects" className="hover:text-[#f3d9b1]">
+            Projects
+          </a>
+
+          <a href="#testimonials" className="hover:text-[#f3d9b1]">
+            Testimonials
+          </a>
+
+          <a href="#contact" className="hover:text-[#f3d9b1]">
+            Contact
+          </a>
+
         </div>
 
         {/* MOBILE BUTTON */}
@@ -89,17 +147,37 @@ export default function HevenessConstructionWebsite() {
         >
           {menuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
+
       </nav>
 
       {/* MOBILE MENU */}
       {menuOpen && (
         <div className="md:hidden bg-[#5c4033] text-white px-6 py-6 space-y-4 shadow-xl">
-          <a href="#home" className="block">Home</a>
-          <a href="#about" className="block">About</a>
-          <a href="#services" className="block">Services</a>
-          <a href="#projects" className="block">Projects</a>
-          <a href="#testimonials" className="block">Testimonials</a>
-          <a href="#contact" className="block">Contact</a>
+
+          <a href="#home" className="block">
+            Home
+          </a>
+
+          <a href="#about" className="block">
+            About
+          </a>
+
+          <a href="#services" className="block">
+            Services
+          </a>
+
+          <a href="#projects" className="block">
+            Projects
+          </a>
+
+          <a href="#testimonials" className="block">
+            Testimonials
+          </a>
+
+          <a href="#contact" className="block">
+            Contact
+          </a>
+
         </div>
       )}
 
@@ -112,6 +190,7 @@ export default function HevenessConstructionWebsite() {
             "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop')",
         }}
       >
+
         <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
           Building Strong Foundations For The Future
         </h2>
@@ -122,12 +201,15 @@ export default function HevenessConstructionWebsite() {
         </p>
 
         <div className="bg-[#f3d9b1] text-[#5c4033] px-6 py-4 rounded-2xl shadow-xl max-w-2xl">
+
           <p className="font-bold text-lg">
             We can do it all — no project is too small, and no vision is too big.
           </p>
+
         </div>
 
         <div className="flex gap-4 mt-8 flex-wrap justify-center">
+
           <a
             href="#projects"
             className="bg-[#f3d9b1] text-[#5c4033] px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition"
@@ -141,21 +223,25 @@ export default function HevenessConstructionWebsite() {
           >
             Get A Quote
           </a>
+
         </div>
+
       </section>
 
       {/* ABOUT */}
       <section id="about" className="py-20 px-8 md:px-20 bg-white">
+
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
           <div>
+
             <h3 className="text-4xl font-bold text-[#5c4033] mb-6">
               About S HEVENESS CONSTRUCTION
             </h3>
 
             <p className="text-lg leading-8 text-gray-700 mb-6">
               S HEVENESS CONSTRUCTION delivers quality building solutions
-              including residential homes, renovations, and small commercial
+              including residential homes, renovations, and commercial
               projects with professionalism and care.
             </p>
 
@@ -164,9 +250,11 @@ export default function HevenessConstructionWebsite() {
               construction services, and long-lasting results that exceed
               customer expectations.
             </p>
+
           </div>
 
           <div className="bg-[#f3e5d0] rounded-3xl p-10 shadow-2xl">
+
             <h4 className="text-2xl font-semibold text-[#5c4033] mb-6">
               Why Choose Us?
             </h4>
@@ -178,112 +266,160 @@ export default function HevenessConstructionWebsite() {
               <li>✔ Affordable Construction Solutions</li>
               <li>✔ Customer Satisfaction Focused</li>
             </ul>
+
           </div>
 
         </div>
+
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-20 px-8 md:px-20 bg-[#f8f5ef]">
-        <div className="max-w-6xl mx-auto text-center">
+      <section
+        id="services"
+        className="py-20 px-8 md:px-20 bg-[#f8f5ef]"
+      >
 
-          <h3 className="text-4xl font-bold text-[#5c4033] mb-12">
-            Our Services
-          </h3>
+        <div className="max-w-7xl mx-auto">
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center mb-14">
 
-            {[
-              {
-                title: "Residential Construction",
-                desc: "Modern homes built with quality materials and expert craftsmanship.",
-              },
-              {
-                title: "Small-Scale Commercial Projects",
-                desc: "Professional commercial construction solutions for offices, shops, and local businesses.",
-              },
-              {
-                title: "Renovations & Maintenance",
-                desc: "Transforming and maintaining properties with reliable workmanship.",
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition"
-              >
-                <h4 className="text-2xl font-semibold text-[#5c4033] mb-4">
-                  {service.title}
-                </h4>
+            <h3 className="text-4xl font-bold text-[#5c4033] mb-4">
+              Our Services
+            </h3>
 
-                <p className="text-gray-700 leading-7">
-                  {service.desc}
-                </p>
-              </div>
-            ))}
+            <p className="text-lg text-gray-600">
+              Professional construction services delivered with quality workmanship.
+            </p>
 
           </div>
-        </div>
-      </section>
 
-      {/* PROJECTS */}
-      <section id="projects" className="py-20 px-8 md:px-20 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
+          <div className="grid md:grid-cols-3 gap-10">
 
-          <h3 className="text-4xl font-bold text-[#5c4033] mb-12">
-            Projects
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-8">
-
-            {projects.map((project, i) => (
+            {services.map((service, index) => (
               <div
-                key={i}
-                className="overflow-hidden rounded-3xl shadow-xl bg-[#f3e5d0]"
+                key={index}
+                className="bg-white rounded-3xl shadow-2xl overflow-hidden"
               >
+
                 <div className="grid grid-cols-2 gap-2 p-2">
 
-                  {project.images.map((img, j) => (
+                  {service.images.map((img, i) => (
                     <button
-                      key={j}
+                      key={i}
                       onClick={() => setSelectedImage(img)}
+                      className="overflow-hidden rounded-2xl"
                     >
+
                       <img
                         src={img}
-                        alt={project.title}
-                        className="h-40 w-full object-cover rounded-xl hover:scale-105 transition duration-300"
+                        alt={service.title}
+                        className="h-52 w-full object-cover hover:scale-110 transition duration-500"
                       />
+
                     </button>
                   ))}
 
                 </div>
 
                 <div className="p-6">
-                  <h4 className="text-2xl font-semibold text-[#5c4033] mb-3">
-                    {project.title}
+
+                  <h4 className="text-2xl font-bold text-[#5c4033] mb-4">
+                    {service.title}
                   </h4>
 
                   <p className="text-gray-700 leading-7">
-                    {project.desc}
+                    {service.desc}
                   </p>
+
                 </div>
+
               </div>
             ))}
 
           </div>
+
         </div>
+
+      </section>
+
+      {/* PROJECTS */}
+      <section
+        id="projects"
+        className="py-20 px-8 md:px-20 bg-white"
+      >
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="text-center mb-14">
+
+            <h3 className="text-4xl font-bold text-[#5c4033] mb-4">
+              Project Progress Showcase
+            </h3>
+
+            <p className="text-lg text-gray-600">
+              Real construction and renovation progress from start to finish.
+            </p>
+
+          </div>
+
+          <div className="space-y-20">
+
+            {projects.map((project, i) => (
+              <div
+                key={i}
+                className="bg-[#f3e5d0] rounded-3xl p-6 shadow-2xl"
+              >
+
+                <h4 className="text-3xl font-bold text-[#5c4033] mb-6">
+                  {project.title}
+                </h4>
+
+                <div className="grid md:grid-cols-3 gap-4">
+
+                  {project.images.map((img, j) => (
+                    <button
+                      key={j}
+                      onClick={() => setSelectedImage(img)}
+                      className="overflow-hidden rounded-2xl"
+                    >
+
+                      <img
+                        src={img}
+                        alt={project.title}
+                        className="h-72 w-full object-cover hover:scale-110 transition duration-500"
+                      />
+
+                    </button>
+                  ))}
+
+                </div>
+
+                <p className="text-lg text-gray-700 leading-8 mt-8">
+                  {project.desc}
+                </p>
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
       </section>
 
       {/* LIGHTBOX */}
-      {selectedImage && (
+      {selectedImage !== "" && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100]"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-[100]"
+          onClick={() => setSelectedImage("")}
         >
+
           <img
             src={selectedImage}
-            alt="Selected Project"
-            className="max-h-[90vh] max-w-[90vw] rounded-2xl"
+            alt="Expanded"
+            className="max-h-[90vh] max-w-[90vw] rounded-3xl"
           />
+
         </div>
       )}
 
@@ -292,6 +428,7 @@ export default function HevenessConstructionWebsite() {
         id="testimonials"
         className="py-20 px-8 md:px-20 bg-[#f8f5ef]"
       >
+
         <div className="max-w-6xl mx-auto text-center">
 
           <h3 className="text-4xl font-bold text-[#5c4033] mb-12">
@@ -305,6 +442,7 @@ export default function HevenessConstructionWebsite() {
                 key={index}
                 className="bg-white p-8 rounded-3xl shadow-xl"
               >
+
                 <p className="text-gray-700 leading-8 mb-6">
                   "{testimonial.text}"
                 </p>
@@ -312,11 +450,14 @@ export default function HevenessConstructionWebsite() {
                 <h4 className="font-bold text-[#5c4033]">
                   {testimonial.name}
                 </h4>
+
               </div>
             ))}
 
           </div>
+
         </div>
+
       </section>
 
       {/* CONTACT */}
@@ -324,6 +465,7 @@ export default function HevenessConstructionWebsite() {
         id="contact"
         className="py-20 px-8 md:px-20 bg-[#5c4033] text-white"
       >
+
         <div className="max-w-5xl mx-auto text-center">
 
           <h3 className="text-4xl font-bold mb-8">
@@ -337,13 +479,14 @@ export default function HevenessConstructionWebsite() {
 
           <div className="grid md:grid-cols-2 gap-8 text-left">
 
-            {/* COMPANY DETAILS */}
             <div className="bg-[#6e4d3d] p-8 rounded-3xl shadow-xl">
+
               <h4 className="text-2xl font-semibold mb-6">
                 Company Details
               </h4>
 
               <p className="mb-4">📞 068 177 8377</p>
+
               <p className="mb-4">📞 064 520 9295</p>
 
               <p className="mb-4">
@@ -359,17 +502,21 @@ export default function HevenessConstructionWebsite() {
               </p>
 
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/media/set/?set=a.122097019563320630&type=3"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 mt-6 hover:text-[#f3d9b1]"
+                className="flex items-center gap-2 mt-6 hover:text-[#f3d9b1] transition"
               >
-                <span>📘</span>
+
+                <span className="text-2xl">📘</span>
+
                 S Heveness Construction
+
               </a>
+
             </div>
 
-            {/* CONTACT FORM */}
+            {/* FORM */}
             <form
               action="https://formspree.io/f/xqenjnbo"
               method="POST"
@@ -410,14 +557,33 @@ export default function HevenessConstructionWebsite() {
             </form>
 
           </div>
+
+          {/* GOOGLE MAP */}
+          <div className="mt-12 rounded-3xl overflow-hidden shadow-2xl">
+
+            <iframe
+              src="https://maps.google.com/maps?q=-26.10525,28.233861&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+          </div>
+
         </div>
+
       </section>
 
       {/* FOOTER */}
       <footer className="bg-[#3f2b21] text-center py-6 text-[#f3e5d0]">
+
         <p>
           © 2026 S HEVENESS CONSTRUCTION. All Rights Reserved.
         </p>
+
       </footer>
 
       {/* WHATSAPP BUTTON */}
@@ -427,25 +593,20 @@ export default function HevenessConstructionWebsite() {
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl z-50 transition-transform hover:scale-110"
       >
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"
           className="w-8 h-8 fill-current"
         >
-          <path d="M19.11 17.2c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.14-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.44.13-.58.13-.13.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-.1 2.44.9 1.44 2.58 2.83 4.4 3.96 1.82 1.13 1.82.75 2.15.7.33-.05 1.07-.44 1.22-.87.15-.43.15-.8.1-.87-.05-.07-.24-.12-.53-.26z"/>
-          <path d="M16.02 3C8.83 3 3 8.74 3 15.83c0 2.49.72 4.92 2.08 7L3 29l6.38-2.04a13.1 13.1 0 006.64 1.81h.01c7.18 0 13.01-5.74 13.01-12.83C29.04 8.74 23.2 3 16.02 3zm0 23.52h-.01a10.9 10.9 0 01-5.55-1.52l-.4-.24-3.79 1.21 1.24-3.68-.26-.38a10.56 10.56 0 01-1.67-5.65c0-5.87 4.71-10.64 10.5-10.64 5.79 0 10.5 4.77 10.5 10.64 0 5.87-4.71 10.64-10.5 10.64z"/>
-        </svg>
-      </a>
 
-      {/* REQUEST QUOTE */}
-      <div className="bg-[#f3d9b1] py-10 text-center">
-        <a
-          href="#contact"
-          className="bg-[#5c4033] text-white px-10 py-4 rounded-2xl font-semibold shadow-xl hover:scale-105 transition"
-        >
-          Request A Quote
-        </a>
-      </div>
+          <path d="M19.11 17.2c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.14-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.44.13-.58.13-.13.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-.1 2.44.9 1.44 2.58 2.83 4.4 3.96 1.82 1.13 1.82.75 2.15.7.33-.05 1.07-.44 1.22-.87.15-.43.15-.8.1-.87-.05-.07-.24-.12-.53-.26z"/>
+
+          <path d="M16.02 3C8.83 3 3 8.74 3 15.83c0 2.49.72 4.92 2.08 7L3 29l6.38-2.04a13.1 13.1 0 006.64 1.81h.01c7.18 0 13.01-5.74 13.01-12.83C29.04 8.74 23.2 3 16.02 3zm0 23.52h-.01a10.9 10.9 0 01-5.55-1.52l-.4-.24-3.79 1.21 1.24-3.68-.26-.38a10.56 10.56 0 01-1.67-5.65c0-5.87 4.71-10.64 10.5-10.64 5.79 0 10.5 4.77 10.5 10.64 0 5.87-4.71 10.64-10.5 10.64z"/>
+
+        </svg>
+
+      </a>
 
     </div>
   );
