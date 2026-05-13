@@ -12,10 +12,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "S HEVENESS CONSTRUCTION",
-  description:
-    "Professional construction services including residential building, renovations, tiling, foundations, and small-scale commercial projects.",
+export const metadata: Metadata = {
+  title: "S Heveness Construction",
+  description: "Professional construction services",
 };
 
 export default function RootLayout({
@@ -26,9 +25,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

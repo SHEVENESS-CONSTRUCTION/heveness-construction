@@ -1,9 +1,65 @@
+"use client";
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
 export default function HevenessConstructionWebsite() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const projects = [
+    {
+      title: "Foundation & Build Progress",
+      images: ["/images/1.jpeg", "/images/2.jpeg"],
+      desc: "Strong structural foundations and professional building progress from start to finish.",
+    },
+    {
+      title: "Modern Home Construction",
+      images: ["/images/3.jpeg", "/images/4.jpeg"],
+      desc: "Modern residential construction with clean finishes and quality workmanship.",
+    },
+    {
+      title: "Finishing & Landscaping",
+      images: ["/images/5.jpeg", "/images/6.jpeg"],
+      desc: "Elegant finishing touches and landscaping designed to enhance the property.",
+    },
+    {
+      title: "Renovations",
+      images: [
+        "/images/7.jpeg",
+        "/images/8.jpeg",
+        "/images/9.jpeg",
+        "/images/10.jpeg",
+      ],
+      desc: "Property renovations and upgrades completed with precision and care.",
+    },
+    {
+      title: "Office Construction",
+      images: ["/images/11.jpeg", "/images/12.jpeg"],
+      desc: "Professional office and commercial space construction solutions.",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Client - Johannesburg",
+      text: "Excellent workmanship and completed on time. Highly recommended.",
+    },
+    {
+      name: "Home Owner",
+      text: "Professional team with quality finishes and reliable communication.",
+    },
+    {
+      name: "Business Client",
+      text: "Affordable construction services with outstanding results.",
+    },
+  ];
+
   return (
     <div className="font-sans text-gray-800 bg-[#f8f5ef] min-h-screen">
-
+      
       {/* NAVBAR */}
-      <nav className="bg-[#5c4033] text-white px-8 py-4 flex justify-between items-center shadow-lg sticky top-0 z-50">
+      <nav className="bg-[#5c4033] text-white px-6 md:px-8 py-4 flex justify-between items-center shadow-lg sticky top-0 z-50">
         <div className="flex items-center gap-3">
           <img
             src="/images/logo.png"
@@ -11,19 +67,41 @@ export default function HevenessConstructionWebsite() {
             className="h-14 w-auto"
           />
 
-          <h1 className="text-xl md:text-2xl font-bold">
+          <h1 className="text-lg md:text-2xl font-bold">
             S HEVENESS CONSTRUCTION
           </h1>
         </div>
 
-        <div className="space-x-6 text-sm md:text-base">
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex space-x-6 text-sm md:text-base">
           <a href="#home" className="hover:text-[#f3d9b1]">Home</a>
           <a href="#about" className="hover:text-[#f3d9b1]">About</a>
           <a href="#services" className="hover:text-[#f3d9b1]">Services</a>
           <a href="#projects" className="hover:text-[#f3d9b1]">Projects</a>
+          <a href="#testimonials" className="hover:text-[#f3d9b1]">Testimonials</a>
           <a href="#contact" className="hover:text-[#f3d9b1]">Contact</a>
         </div>
+
+        {/* MOBILE BUTTON */}
+        <button
+          className="md:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={32} /> : <Menu size={32} />}
+        </button>
       </nav>
+
+      {/* MOBILE MENU */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#5c4033] text-white px-6 py-6 space-y-4 shadow-xl">
+          <a href="#home" className="block">Home</a>
+          <a href="#about" className="block">About</a>
+          <a href="#services" className="block">Services</a>
+          <a href="#projects" className="block">Projects</a>
+          <a href="#testimonials" className="block">Testimonials</a>
+          <a href="#contact" className="block">Contact</a>
+        </div>
+      )}
 
       {/* HERO */}
       <section
@@ -31,7 +109,7 @@ export default function HevenessConstructionWebsite() {
         className="h-[90vh] flex flex-col justify-center items-center text-center px-6 text-white bg-cover bg-center relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop')",
+            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop')",
         }}
       >
         <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -43,11 +121,26 @@ export default function HevenessConstructionWebsite() {
           reliability, and excellence on every project.
         </p>
 
-        {/* EYECATCHING MESSAGE */}
         <div className="bg-[#f3d9b1] text-[#5c4033] px-6 py-4 rounded-2xl shadow-xl max-w-2xl">
           <p className="font-bold text-lg">
             We can do it all — no project is too small, and no vision is too big.
           </p>
+        </div>
+
+        <div className="flex gap-4 mt-8 flex-wrap justify-center">
+          <a
+            href="#projects"
+            className="bg-[#f3d9b1] text-[#5c4033] px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition"
+          >
+            View Projects
+          </a>
+
+          <a
+            href="#contact"
+            className="border-2 border-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-[#5c4033] transition"
+          >
+            Get A Quote
+          </a>
         </div>
       </section>
 
@@ -73,7 +166,6 @@ export default function HevenessConstructionWebsite() {
             </p>
           </div>
 
-          {/* WHY CHOOSE US */}
           <div className="bg-[#f3e5d0] rounded-3xl p-10 shadow-2xl">
             <h4 className="text-2xl font-semibold text-[#5c4033] mb-6">
               Why Choose Us?
@@ -143,38 +235,7 @@ export default function HevenessConstructionWebsite() {
 
           <div className="grid md:grid-cols-3 gap-8">
 
-            {[
-              {
-                title: "Foundation & Build Progress",
-                images: ["/images/1.jpeg", "/images/2.jpeg"],
-                desc: "Strong structural foundations and professional building progress from start to finish.",
-              },
-              {
-                title: "Modern Home Construction",
-                images: ["/images/3.jpeg", "/images/4.jpeg"],
-                desc: "Modern residential construction with clean finishes and quality workmanship.",
-              },
-              {
-                title: "Finishing & Landscaping",
-                images: ["/images/5.jpeg", "/images/6.jpeg"],
-                desc: "Elegant finishing touches and landscaping designed to enhance the property.",
-              },
-              {
-                title: "Renovations",
-                images: [
-                  "/images/7.jpeg",
-                  "/images/8.jpeg",
-                  "/images/9.jpeg",
-                  "/images/10.jpeg",
-                ],
-                desc: "Property renovations and upgrades completed with precision and care.",
-              },
-              {
-                title: "Office Construction",
-                images: ["/images/11.jpeg", "/images/12.jpeg"],
-                desc: "Professional office and commercial space construction solutions.",
-              },
-            ].map((project, i) => (
+            {projects.map((project, i) => (
               <div
                 key={i}
                 className="overflow-hidden rounded-3xl shadow-xl bg-[#f3e5d0]"
@@ -182,18 +243,16 @@ export default function HevenessConstructionWebsite() {
                 <div className="grid grid-cols-2 gap-2 p-2">
 
                   {project.images.map((img, j) => (
-                    <a
+                    <button
                       key={j}
-                      href={img}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      onClick={() => setSelectedImage(img)}
                     >
                       <img
                         src={img}
                         alt={project.title}
                         className="h-40 w-full object-cover rounded-xl hover:scale-105 transition duration-300"
                       />
-                    </a>
+                    </button>
                   ))}
 
                 </div>
@@ -214,12 +273,58 @@ export default function HevenessConstructionWebsite() {
         </div>
       </section>
 
+      {/* LIGHTBOX */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100]"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img
+            src={selectedImage}
+            alt="Selected Project"
+            className="max-h-[90vh] max-w-[90vw] rounded-2xl"
+          />
+        </div>
+      )}
+
+      {/* TESTIMONIALS */}
+      <section
+        id="testimonials"
+        className="py-20 px-8 md:px-20 bg-[#f8f5ef]"
+      >
+        <div className="max-w-6xl mx-auto text-center">
+
+          <h3 className="text-4xl font-bold text-[#5c4033] mb-12">
+            Testimonials
+          </h3>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-3xl shadow-xl"
+              >
+                <p className="text-gray-700 leading-8 mb-6">
+                  "{testimonial.text}"
+                </p>
+
+                <h4 className="font-bold text-[#5c4033]">
+                  {testimonial.name}
+                </h4>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section
         id="contact"
         className="py-20 px-8 md:px-20 bg-[#5c4033] text-white"
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
 
           <h3 className="text-4xl font-bold mb-8">
             Contact Us
@@ -240,28 +345,58 @@ export default function HevenessConstructionWebsite() {
 
               <p className="mb-4">📞 068 177 8377</p>
               <p className="mb-4">📞 064 520 9295</p>
-              <p className="mb-4">✉️ hevenesss@gmail.com</p>
-              <p>📍 Johannesburg, South Africa</p>
+
+              <p className="mb-4">
+                ✉️ hevenesssithole75@gmail.com
+              </p>
+
+              <p className="mb-4">
+                ✉️ hevenesss@gmail.com
+              </p>
+
+              <p className="mb-4">
+                📍 Johannesburg, South Africa
+              </p>
+
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 mt-6 hover:text-[#f3d9b1]"
+              >
+                <span>📘</span>
+                S Heveness Construction
+              </a>
             </div>
 
             {/* CONTACT FORM */}
-            <form className="bg-[#6e4d3d] p-8 rounded-3xl shadow-xl space-y-4">
+            <form
+              action="https://formspree.io/f/xqenjnbo"
+              method="POST"
+              className="bg-[#6e4d3d] p-8 rounded-3xl shadow-xl space-y-4"
+            >
 
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                required
                 className="w-full p-4 rounded-xl text-black"
               />
 
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
+                required
                 className="w-full p-4 rounded-xl text-black"
               />
 
               <textarea
                 rows={5}
+                name="message"
                 placeholder="Your Message"
+                required
                 className="w-full p-4 rounded-xl text-black"
               ></textarea>
 
@@ -280,10 +415,12 @@ export default function HevenessConstructionWebsite() {
 
       {/* FOOTER */}
       <footer className="bg-[#3f2b21] text-center py-6 text-[#f3e5d0]">
-        © 2026 S HEVENESS CONSTRUCTION. All Rights Reserved.
+        <p>
+          © 2026 S HEVENESS CONSTRUCTION. All Rights Reserved.
+        </p>
       </footer>
 
-      {/* FLOATING WHATSAPP BUTTON */}
+      {/* WHATSAPP BUTTON */}
       <a
         href="https://wa.me/27681778377"
         target="_blank"
@@ -300,7 +437,7 @@ export default function HevenessConstructionWebsite() {
         </svg>
       </a>
 
-      {/* REQUEST QUOTE BUTTON */}
+      {/* REQUEST QUOTE */}
       <div className="bg-[#f3d9b1] py-10 text-center">
         <a
           href="#contact"
